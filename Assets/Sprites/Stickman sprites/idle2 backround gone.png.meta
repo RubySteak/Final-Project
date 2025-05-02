@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 760e3310638d46c4bac63e7f15675c06
+guid: 4658cf989da06fe4cb726af748324b71
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5905681027756182028
-    second: idle1_0
+      213: 8001252490415053686
+    second: idle2 backround gone_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -134,13 +134,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle1_0
+      name: idle2 backround gone_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 548
-        height: 536
+        x: 184
+        y: 226
+        width: 137
+        height: 218
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,8 +148,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c0acb28ea9135f150800000000000000
-      internalID: 5905681027756182028
+      spriteID: 67b16616fb82a0f60800000000000000
+      internalID: 8001252490415053686
       vertices: []
       indices: 
       edges: []

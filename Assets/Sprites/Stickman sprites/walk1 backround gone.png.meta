@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 00c007bf5fb2cf64887e22406c397571
+guid: 7cba81cdb9519744097eeca6d7f0694d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9104348463550422359
-    second: walk2_0
+      213: -2854531060639980138
+    second: walk1 backround gone_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -134,13 +134,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walk2_0
+      name: walk1 backround gone_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1038
-        height: 1000
+        x: 181
+        y: 225
+        width: 169
+        height: 221
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,8 +148,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 75ddb41d0b4295e70800000000000000
-      internalID: 9104348463550422359
+      spriteID: 6952c32df1ba268d0800000000000000
+      internalID: -2854531060639980138
       vertices: []
       indices: 
       edges: []

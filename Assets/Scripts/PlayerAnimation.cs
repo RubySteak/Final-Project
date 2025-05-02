@@ -11,8 +11,9 @@ public class PlayerAnimation : MonoBehaviour
     Animator animator;
     Player player;
     Rigidbody2D rigidbody2D;
-    
-    
+
+    bool isTouchingWall;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,23 @@ public class PlayerAnimation : MonoBehaviour
     void Update()
     {
         animator.SetBool("Falling", player.isFalling);
-        animator.SetBool("Running", player.isMoving); // New animation trigger for running
+        animator.SetBool("Running", player.isMoving);
+        animator.SetBool("TouchingWall", isTouchingWall);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            isTouchingWall = true;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            isTouchingWall = false;
+        }
     }
 }

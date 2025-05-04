@@ -164,7 +164,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      walk2 backround gone_0: 3755209238106095271
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

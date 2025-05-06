@@ -13,6 +13,7 @@ public class PlayerAnimation : MonoBehaviour
     Rigidbody2D rigidbody2D;
 
     bool isTouchingWall;
+    bool isCrouching;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class PlayerAnimation : MonoBehaviour
         animator.SetBool("Falling", player.isFalling);
         animator.SetBool("Running", player.isMoving);
         animator.SetBool("TouchingWall", isTouchingWall);
+        animator.SetBool("Crouching", player.isCrouching);
     }
 
     void OnCollisionEnter2D(Collision2D collision)

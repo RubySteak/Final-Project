@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 317972404}
   - component: {fileID: 317972403}
   m_Layer: 5
-  m_Name: Controls
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

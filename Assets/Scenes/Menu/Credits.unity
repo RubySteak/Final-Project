@@ -175,9 +175,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1967180709
+  m_SortingLayer: 1
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7446023897176584029, guid: d4e82d9fc3c204330a656cdf519f6686, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -198,11 +198,11 @@ Transform:
   m_GameObject: {fileID: 111117362}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: 16.5, z: 0}
+  m_LocalPosition: {x: 564, y: 292.5, z: 0}
   m_LocalScale: {x: 13, y: 13, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2060185822}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &118277642
 GameObject:
@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 118277645}
   - component: {fileID: 118277644}
   m_Layer: 5
-  m_Name: Credits
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -525,9 +525,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1967180709
+  m_SortingLayer: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -3460323606291361141, guid: 6033653a7607f473dbcb964522431fed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -548,11 +548,11 @@ Transform:
   m_GameObject: {fileID: 376580833}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -366, y: 16.5, z: 0}
+  m_LocalPosition: {x: 196, y: 292.5, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2060185822}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &454969169
 GameObject:
@@ -1644,8 +1644,6 @@ RectTransform:
   - {fileID: 1400631874}
   - {fileID: 317972402}
   - {fileID: 118277643}
-  - {fileID: 376580835}
-  - {fileID: 111117364}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1877,3 +1875,5 @@ SceneRoots:
   - {fileID: 2060185822}
   - {fileID: 1326441753}
   - {fileID: 1166977410}
+  - {fileID: 376580835}
+  - {fileID: 111117364}

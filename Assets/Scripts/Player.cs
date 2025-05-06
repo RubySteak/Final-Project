@@ -5,12 +5,14 @@ public class Player : MonoBehaviour
 {
     Rigidbody2D rigidbody2D;
     public float jumpForce = 10.0f;
+    public float jumpForceCrouch = 15.0f;
     public float jumpForceWall = 10.0f;
     public float moveSpeed = 5.0f;
 
     public bool isFalling = true;
     public bool isMoving = false;
     public bool isTouchingWall = false;
+    public bool isCrouching = false;
 
     int midairJump = 1;
 
@@ -24,7 +26,12 @@ public class Player : MonoBehaviour
     void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
-        rigidbody2D.velocity = new Vector2(horizontalInput * moveSpeed, rigidbody2D.velocity.y);
+        
+        if(!isCrouching)
+        {
+            rigidbody2D.velocity = new Vector2(horizontalInput * moveSpeed, rigidbody2D.velocity.y);
+        }
+        
 
         isMoving = Mathf.Abs(horizontalInput) > 0.1f;
 
@@ -40,15 +47,32 @@ public class Player : MonoBehaviour
 
         if (!isFalling)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                isCrouching = true;
+                rigidbody2D.velocity = new Vector2(0, 0);
+            }
+            else if (Input.GetKeyUp(KeyCode.S))
+            {
+                isCrouching = false;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space) && !isCrouching)
             {
                 rigidbody2D.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
+            }
+            
+            if (Input.GetKeyDown(KeyCode.Space) && isCrouching)
+            {
+                rigidbody2D.AddForce(Vector3.up * jumpForceCrouch, ForceMode2D.Impulse);
+                isCrouching = false;
             }
         }
         else if (!isFalling || midairJump == 1)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                rigidbody2D.velocity = Vector2.zero; // Reset velocity to prevent double jump
                 rigidbody2D.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
                 midairJump -= 1;
             }

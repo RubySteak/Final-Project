@@ -164,7 +164,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dance1_0: 5933940753128943528
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

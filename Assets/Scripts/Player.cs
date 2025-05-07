@@ -65,6 +65,7 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) && isCrouching)
             {
                 rigidbody2D.AddForce(Vector3.up * jumpForceCrouch, ForceMode2D.Impulse);
+                midairJump -= 1;
                 isCrouching = false;
             }
         }

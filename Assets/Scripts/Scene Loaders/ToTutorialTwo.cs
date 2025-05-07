@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Deathtutorial : MonoBehaviour
+public class ToTutorialTwo : MonoBehaviour
 {
-    public static Death instance;
+    public static ToTutorialTwo instance;
 
     // Update is called once per frame
     void Update()
@@ -11,18 +11,18 @@ public class Deathtutorial : MonoBehaviour
         
     }
 
-    public static void DeathSceneTutorial()
+    public static void ToTutorial()
     {
         Debug.Log("DeathSceneTutorial called");
-        SceneManager.LoadScene(9);
+        SceneManager.LoadScene("Tutorial2");
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         Debug.Log("OnCollisionEnter2D called");
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("square trigger"))
         {
-            DeathSceneTutorial();
+            ToTutorial();
         }
     }
 }

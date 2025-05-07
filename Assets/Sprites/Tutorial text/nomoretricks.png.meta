@@ -157,14 +157,15 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 719bce8a9cdbc4aafa58e47e6582b9f8
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      nomoretricks_0: -4658739577018841845
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

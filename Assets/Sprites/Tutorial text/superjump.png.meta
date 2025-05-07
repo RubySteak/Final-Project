@@ -137,12 +137,12 @@ TextureImporter:
       name: superjump_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 388
-        height: 94
+        x: 62
+        y: 22
+        width: 241
+        height: 53
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -157,14 +157,15 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0dfb2dcd600c84115af6b0c53811cbc5
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      superjump_0: -687493790254057814
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

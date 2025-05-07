@@ -156,7 +156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 282.4, y: -137.3}
+  m_AnchoredPosition: {x: 394.24997, y: -137.3}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &118277644
@@ -289,7 +289,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 282.4, y: -204.2}
+  m_AnchoredPosition: {x: 394.24997, y: -204.2}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &317972403
@@ -751,8 +751,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -192.44904, y: -0.0015564}
-  m_SizeDelta: {x: 654.4093, y: 553}
+  m_AnchoredPosition: {x: -180.51044, y: -72.49997}
+  m_SizeDelta: {x: 728.8885, y: 553}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &959427188
 MonoBehaviour:
@@ -792,19 +792,17 @@ MonoBehaviour:
 
     A/D: Move left/right
 
+    S: Crouch
+
     Space: Jump
 
-    Space (in midair):
-    double jump
+    Space
+    (in midair): double jump
 
-    Space (on wall): wall jump
+    Space (while crouching): Super jump
 
-
-    To wall jump, jump into a wall.
-    Then, let go of the direction you''re currently going in. Then, go in the opposite
-    direction & press space at the same time.
-
-'
+    (you can''t
+    double jump if you super jump)'
 --- !u!222 &959427189
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -917,7 +915,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 282.4, y: -65.2}
+  m_AnchoredPosition: {x: 394.24997, y: -65.2}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1400631875
@@ -1137,7 +1135,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.9992, y: 0.0308, z: 0}
-  m_LocalScale: {x: 4.831958, y: 3.4634814, z: 1}
+  m_LocalScale: {x: 6.4627433, y: 5.3683963, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1444,11 +1442,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 0
+  jumpForceCrouch: 15
   jumpForceWall: 0
   moveSpeed: 0
   isFalling: 1
   isMoving: 0
   isTouchingWall: 0
+  isCrouching: 0
 --- !u!114 &2141172976
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -356,6 +356,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+  - m_Name: CrouchJumped
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -617,35 +623,35 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 4891380775452968823}
-    m_Position: {x: -80, y: 300, z: 0}
+    m_Position: {x: -130, y: 300, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8611456879373756510}
-    m_Position: {x: 150, y: 240, z: 0}
+    m_Position: {x: 100, y: 300, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3309237633532578312}
     m_Position: {x: 40, y: 410, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4337446448981828731}
-    m_Position: {x: 200, y: 480, z: 0}
+    m_Position: {x: 40, y: 470, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3759021851938141284}
-    m_Position: {x: -200, y: 410, z: 0}
+    m_Position: {x: -220, y: 440, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3157740226344834748}
-    m_Position: {x: -400, y: 320, z: 0}
+    m_Position: {x: -410, y: 380, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3394503360267588087}
-    m_Position: {x: -320, y: 50, z: 0}
+    m_Position: {x: -400, y: 110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3079384904336473475}
-    m_Position: {x: -210, y: -50, z: 0}
+    m_Position: {x: -270, y: 20, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 0, y: 40, z: 0}
-  m_EntryPosition: {x: 90, y: 80, z: 0}
+  m_AnyStatePosition: {x: 180, y: -10, z: 0}
+  m_EntryPosition: {x: 90, y: 180, z: 0}
   m_ExitPosition: {x: 180, y: 40, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 4891380775452968823}
@@ -713,6 +719,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: Crouching
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: CrouchJumped
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4891380775452968823}
   m_Solo: 0
@@ -762,6 +771,9 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 2
     m_ConditionEvent: Crouching
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: CrouchJumped
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4891380775452968823}

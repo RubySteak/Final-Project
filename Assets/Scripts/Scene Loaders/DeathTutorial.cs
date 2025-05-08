@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Deathtutorial : MonoBehaviour
+public class DeathtuTorial : MonoBehaviour
 {
     public static Death instance;
 

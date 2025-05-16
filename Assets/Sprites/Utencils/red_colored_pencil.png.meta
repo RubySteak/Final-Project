@@ -164,7 +164,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      red_colored_pencil_0: -1982852849805732070
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

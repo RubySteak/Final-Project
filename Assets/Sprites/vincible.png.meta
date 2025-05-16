@@ -164,7 +164,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      vincible_0: 1557124812031855126
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

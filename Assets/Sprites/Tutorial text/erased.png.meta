@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 74c332268d197004f9061667ab94c4b6
+guid: 85b4aafd3b3447e4b98a0189960a8893
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5504243791029437756
-    second: stickman_head_0
+      213: 6566201440356267877
+    second: erased_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -134,13 +134,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: stickman_head_0
+      name: erased_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 300
-        height: 214
+        width: 236
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,8 +148,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4ca7a8e4f6ffc93b0800000000000000
-      internalID: -5504243791029437756
+      spriteID: 567f718bb65df1b50800000000000000
+      internalID: 6566201440356267877
       vertices: []
       indices: 
       edges: []

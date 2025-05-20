@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b787b236e1a974a1eae43e028a5e4d41
+guid: 93eb9b9c52e07244eb21d9891b80ec77
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5001457795929047056
-    second: 3_9_0
+      213: -616819621527219562
+    second: endtutorial_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -83,7 +83,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Standalone
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -95,7 +95,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -134,22 +134,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3_9_0
+      name: endtutorial_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 6
-        width: 172
-        height: 119
+        x: 221
+        y: 405
+        width: 489
+        height: 97
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0108575dd5fb86540800000000000000
-      internalID: 5001457795929047056
+      spriteID: 692116082dd9077f0800000000000000
+      internalID: -616819621527219562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: endtutorial_1
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 386
+        width: 1
+        height: 2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 468f0b4faa59a524381a4f6d3b01c863
+      internalID: 1591704274
       vertices: []
       indices: 
       edges: []
@@ -157,7 +178,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 536ce30698ccbc244aa95e6523b1a933
     internalID: 0
     vertices: []
     indices: 
@@ -165,7 +186,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      3_9_0: 5001457795929047056
+      endtutorial_1: 1591704274
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -20,7 +20,7 @@ public class Platform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerOnPlatform && Input.GetKeyDown(KeyCode.S))
+        if (playerOnPlatform && Input.GetKeyDown(KeyCode.Q))
         {
             StartCoroutine(DisableCollider());
         }

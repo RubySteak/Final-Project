@@ -93,13 +93,11 @@ public class Player : MonoBehaviour
         
         if (other.gameObject.CompareTag("Ground"))
         {
-            print("Touching ground");
             isFalling = false;
         }
 
         if (other.gameObject.CompareTag("Wall"))
         {
-            print("Touching wall");
             isTouchingWall = true;
             isFalling = false;
         }

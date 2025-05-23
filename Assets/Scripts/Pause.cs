@@ -1,35 +1,47 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Pause : MonoBehaviour
 {
     bool isPause;
+
+    public UnityEvent PauseEvent = new UnityEvent();
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        PauseEvent.AddListener(Listener);
     }
 
     // Update is called once per frame
     void Update()
     {
-        PauseScreen();
+       PauseCheck();
     }
 
-    void PauseScreen()
+    void PauseCheck()
     {
         if (Input.GetKeyDown(KeyCode.P) && isPause == false)
         {
             Time.timeScale = 0;
             isPause = true;
+            Debug.Log("Game Paused");
+            PauseEvent.Invoke();
         }
-
-        if (Input.GetKeyDown(KeyCode.P) && isPause == true)
+        else if (Input.GetKeyDown(KeyCode.P) && isPause == true)
         {
             Time.timeScale = 1;
             isPause = false;
+            Debug.Log("Game Unpaused");
+            PauseEvent.Invoke();
         }
+    }
+
+    void Listener()
+    {
+        
     }
 }

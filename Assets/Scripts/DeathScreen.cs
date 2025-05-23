@@ -48,6 +48,6 @@ public class DeathScreen : MonoBehaviour
 
     void Listener()
     {
-        Debug.Log("Player has died");
+        
     }
 }

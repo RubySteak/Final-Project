@@ -5,8 +5,8 @@ public class Player : MonoBehaviour
 {
     Rigidbody2D rigidbody2D;
     public float jumpForce = 10.0f;
-    public float jumpForceCrouch = 15.0f;
     public float jumpForceWall = 10.0f;
+    public float jumpForceCrouch = 15.0f;
     public float moveSpeed = 5.0f;
 
     public bool isFalling = true;

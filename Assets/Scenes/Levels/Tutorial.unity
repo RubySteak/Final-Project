@@ -928,7 +928,7 @@ SpriteRenderer:
   m_SortingLayerID: 1967180709
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8561289038441490638, guid: d87285d465e612544a4bcf4a07d140fe, type: 3}
+  m_Sprite: {fileID: 783185214206274263, guid: 100b203bece958d40a317bacb238cef1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -14836,9 +14836,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5917d0e34ce1a2b47b5fb6fd11052a70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnCrouchHitbox:
+    m_PersistentCalls:
+      m_Calls: []
+  OffCrouchHitbox:
+    m_PersistentCalls:
+      m_Calls: []
   jumpForce: 10
-  jumpForceCrouch: 14
   jumpForceWall: 7
+  jumpForceCrouch: 14
   moveSpeed: 9
   isFalling: 0
   isMoving: 0

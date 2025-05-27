@@ -1,8 +1,16 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
+
 public class Player : MonoBehaviour
 {
+    public UnityEvent OnCrouchHitbox = new UnityEvent();
+    public UnityEvent OffCrouchHitbox = new UnityEvent();
+    
     Rigidbody2D rigidbody2D;
     public float jumpForce = 10.0f;
     public float jumpForceWall = 10.0f;
@@ -20,6 +28,9 @@ public class Player : MonoBehaviour
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
+
+        OnCrouchHitbox.AddListener(Listener);
+        OffCrouchHitbox.AddListener(Listener);
     }
 
     // Update is called once per frame
@@ -51,21 +62,25 @@ public class Player : MonoBehaviour
             {
                 isCrouching = true;
                 rigidbody2D.velocity = new Vector2(0, 0);
+                OnCrouchHitbox.Invoke();
             }
             else if (Input.GetKeyUp(KeyCode.S))
             {
                 isCrouching = false;
+                OffCrouchHitbox.Invoke();
             }
 
             if (Input.GetKeyDown(KeyCode.Space) && !isCrouching)
             {
                 rigidbody2D.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
+                OffCrouchHitbox.Invoke();
             }
             
             if (Input.GetKeyDown(KeyCode.Space) && isCrouching)
             {
                 rigidbody2D.AddForce(Vector3.up * jumpForceCrouch, ForceMode2D.Impulse);
                 isCrouching = false;
+                OffCrouchHitbox.Invoke();
             }
         }
         else if (!isFalling || midairJump == 1)
@@ -116,5 +131,10 @@ public class Player : MonoBehaviour
             isTouchingWall = false;
             isFalling = true;
         }
+    }
+
+    void Listener()
+    {
+        
     }
 }

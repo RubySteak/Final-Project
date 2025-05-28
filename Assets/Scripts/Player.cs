@@ -15,12 +15,14 @@ public class Player : MonoBehaviour
     public float jumpForce = 10.0f;
     public float jumpForceWall = 10.0f;
     public float jumpForceCrouch = 15.0f;
+    public float springForce = 30.0f;
     public float moveSpeed = 5.0f;
 
     public bool isFalling = true;
     public bool isMoving = false;
     public bool isTouchingWall = false;
     public bool isCrouching = false;
+    public bool isSpring = false;
 
     int midairJump = 1;
 
@@ -101,6 +103,12 @@ public class Player : MonoBehaviour
                 midairJump -= 1;
             }
         }
+
+        if (isSpring)
+        {
+            rigidbody2D.velocity = Vector2.zero;
+            rigidbody2D.AddForce(Vector3.up * springForce, ForceMode2D.Impulse);
+        }
     }
 
     private void OnCollisionStay2D(Collision2D other)
@@ -117,6 +125,11 @@ public class Player : MonoBehaviour
             isFalling = false;
         }
 
+        if (other.gameObject.CompareTag("Spring"))
+        {
+            isSpring = true;
+            midairJump = 0;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D other)
@@ -130,6 +143,12 @@ public class Player : MonoBehaviour
         {
             isTouchingWall = false;
             isFalling = true;
+        }
+
+        if (other.gameObject.CompareTag("Spring"))
+        {
+            isSpring = false;
+            midairJump = 0;
         }
     }
 

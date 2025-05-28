@@ -914,8 +914,8 @@ Transform:
   m_GameObject: {fileID: 79864110}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.70710576, w: 0.7071079}
-  m_LocalPosition: {x: 27.2876, y: 3.0088, z: 0}
-  m_LocalScale: {x: 0.043928824, y: 0.7459565, z: 1}
+  m_LocalPosition: {x: 27.7225, y: 3.0088, z: 0}
+  m_LocalScale: {x: 0.043928824, y: 0.6653594, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2059,7 +2059,7 @@ GameObject:
   - component: {fileID: 215324524}
   - component: {fileID: 215324523}
   - component: {fileID: 215324526}
-  - component: {fileID: 215324525}
+  - component: {fileID: 215324527}
   m_Layer: 0
   m_Name: yellow_colored_pencil_0
   m_TagString: Untagged
@@ -2134,33 +2134,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
---- !u!114 &215324525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 215324522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d81cecc2c0224ba478e5857ddc4598f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DeathScreenLoader:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 583858827}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Level 1 Win
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!60 &215324526
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2364,6 +2337,33 @@ PolygonCollider2D:
       - {x: -9.82125, y: -10.642501}
       - {x: -9.533751, y: -10.4925}
   m_UseDelaunayMesh: 0
+--- !u!114 &215324527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215324522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a3d03efcbd4d994783f42a367768640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnDeathEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 583858827}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level 1 Win
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &256710806
 GameObject:
   m_ObjectHideFlags: 0
@@ -2940,8 +2940,8 @@ Transform:
   m_GameObject: {fileID: 308326356}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -65.8995, y: 1.53, z: 0}
-  m_LocalScale: {x: 13.065173, y: 0.6298241, z: 1}
+  m_LocalPosition: {x: -66.0248, y: 1.53, z: 0}
+  m_LocalScale: {x: 12.8143215, y: 0.6298241, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2057718805}
@@ -4904,11 +4904,11 @@ PrefabInstance:
       objectReference: {fileID: 6200000, guid: 15cbf7ab0082f5649b80dd2b310e0799, type: 2}
     - target: {fileID: 4638677384616913917, guid: 76809b636512f1647977f165a847a9d4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -40.29
+      value: -41.56
       objectReference: {fileID: 0}
     - target: {fileID: 4638677384616913917, guid: 76809b636512f1647977f165a847a9d4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.4
+      value: -2.51
       objectReference: {fileID: 0}
     - target: {fileID: 4638677384616913917, guid: 76809b636512f1647977f165a847a9d4, type: 3}
       propertyPath: m_LocalPosition.z

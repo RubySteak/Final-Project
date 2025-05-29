@@ -9,6 +9,7 @@ TagManager:
   - Instant Death
   - square trigger
   - Spring
+  - Space Wall
   layers:
   - Default
   - TransparentFX

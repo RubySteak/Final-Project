@@ -10,19 +10,24 @@ public class Player : MonoBehaviour
 {
     public UnityEvent OnCrouchHitbox = new UnityEvent();
     public UnityEvent OffCrouchHitbox = new UnityEvent();
-    
+
     Rigidbody2D rigidbody2D;
     public float jumpForce = 10.0f;
     public float jumpForceWall = 10.0f;
+    public float jumpForceSpacePlatform = 2.5f;
     public float jumpForceCrouch = 15.0f;
+    public float jumpForceCrouchSpace = 5.0f;
     public float springForce = 30.0f;
     public float moveSpeed = 5.0f;
+    public float moveSpeedSpace = 2.0f;
 
     public bool isFalling = true;
     public bool isMoving = false;
     public bool isTouchingWall = false;
     public bool isCrouching = false;
     public bool isSpring = false;
+    public bool isOnSpacePlatform = false;
+    public bool isInSpace = false;
 
     int midairJump = 1;
 
@@ -39,12 +44,16 @@ public class Player : MonoBehaviour
     void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
-        
-        if(!isCrouching)
+
+        if (!isCrouching && !isInSpace)
         {
             rigidbody2D.velocity = new Vector2(horizontalInput * moveSpeed, rigidbody2D.velocity.y);
         }
-        
+        else if (!isCrouching && isInSpace)
+        {
+            rigidbody2D.velocity = new Vector2(horizontalInput * moveSpeedSpace, rigidbody2D.velocity.y);
+        }
+
 
         isMoving = Mathf.Abs(horizontalInput) > 0.1f;
 
@@ -58,44 +67,61 @@ public class Player : MonoBehaviour
             midairJump = 0;
         }
 
-        if (!isFalling)
+        if (!isFalling) // if not falling 
         {
-            if (Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.S)) // if presses S key
             {
                 isCrouching = true;
                 rigidbody2D.velocity = new Vector2(0, 0);
                 OnCrouchHitbox.Invoke();
             }
-            else if (Input.GetKeyUp(KeyCode.S))
+            else if (Input.GetKeyUp(KeyCode.S)) // if releases S key
             {
                 isCrouching = false;
                 OffCrouchHitbox.Invoke();
             }
 
-            if (Input.GetKeyDown(KeyCode.Space) && !isCrouching)
+            if (Input.GetKeyDown(KeyCode.Space) && !isCrouching && !isInSpace) // if not crouching and presses space
             {
                 rigidbody2D.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
                 OffCrouchHitbox.Invoke();
             }
-            
-            if (Input.GetKeyDown(KeyCode.Space) && isCrouching)
+            else if (Input.GetKeyDown(KeyCode.Space) && isInSpace && !isCrouching) // if in space, not crouching and presses space
+            {
+                rigidbody2D.AddForce(Vector3.up * jumpForceSpacePlatform, ForceMode2D.Impulse);
+                OffCrouchHitbox.Invoke();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space) && isCrouching && !isInSpace) // if crouching and presses space
             {
                 rigidbody2D.AddForce(Vector3.up * jumpForceCrouch, ForceMode2D.Impulse);
                 isCrouching = false;
                 OffCrouchHitbox.Invoke();
             }
+            else if (Input.GetKeyDown(KeyCode.Space) && isCrouching && isInSpace) // if n space, crouching and presses space
+            {
+                rigidbody2D.AddForce(Vector3.up * jumpForceCrouchSpace, ForceMode2D.Impulse);
+                isCrouching = false;
+                OffCrouchHitbox.Invoke();
+            }
         }
-        else if (!isFalling || midairJump == 1)
+        else if (!isFalling || midairJump == 1) // if not falling or has midair jumps left
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && !isInSpace)
             {
                 rigidbody2D.velocity = Vector2.zero;
                 rigidbody2D.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
                 midairJump -= 1;
             }
+            else if (Input.GetKeyDown(KeyCode.Space) && isInSpace)
+            {
+                rigidbody2D.velocity = Vector2.zero;
+                rigidbody2D.AddForce(Vector3.up * jumpForceSpacePlatform, ForceMode2D.Impulse);
+                midairJump -= 1;
+            }
         }
 
-        if (isFalling && isTouchingWall)
+        if (isFalling && isTouchingWall) // scrapted wall jump
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -104,7 +130,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (isSpring)
+        if (isSpring) // if touching spring
         {
             rigidbody2D.velocity = Vector2.zero;
             rigidbody2D.AddForce(Vector3.up * springForce, ForceMode2D.Impulse);
@@ -113,7 +139,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D other)
     {
-        
+
         if (other.gameObject.CompareTag("Ground"))
         {
             isFalling = false;
@@ -129,6 +155,13 @@ public class Player : MonoBehaviour
         {
             isSpring = true;
             midairJump = 0;
+        }
+
+        if (other.gameObject.CompareTag("Space Wall"))
+        {
+            isFalling = false;
+            isOnSpacePlatform = true;
+            midairJump = 1;
         }
     }
 
@@ -150,10 +183,21 @@ public class Player : MonoBehaviour
             isSpring = false;
             midairJump = 0;
         }
+
+        if (other.gameObject.CompareTag("Space Wall"))
+        {
+            isFalling = true;
+            isOnSpacePlatform = false;
+        }
     }
 
     void Listener()
     {
-        
+
+    }
+
+    public void SpaceTrigger()
+    {
+        isInSpace = true;
     }
 }

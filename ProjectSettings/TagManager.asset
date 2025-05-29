@@ -10,6 +10,7 @@ TagManager:
   - square trigger
   - Spring
   - Space Wall
+  - Spring normal
   layers:
   - Default
   - TransparentFX

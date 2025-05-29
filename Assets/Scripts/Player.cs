@@ -17,7 +17,8 @@ public class Player : MonoBehaviour
     public float jumpForceSpacePlatform = 2.5f;
     public float jumpForceCrouch = 15.0f;
     public float jumpForceCrouchSpace = 5.0f;
-    public float springForce = 30.0f;
+    public float springForceSpace = 30.0f;
+    public float springForce = 20.0f;
     public float moveSpeed = 5.0f;
     public float moveSpeedSpace = 2.0f;
 
@@ -25,6 +26,7 @@ public class Player : MonoBehaviour
     public bool isMoving = false;
     public bool isTouchingWall = false;
     public bool isCrouching = false;
+    public bool isSpringSpace = false;
     public bool isSpring = false;
     public bool isOnSpacePlatform = false;
     public bool isInSpace = false;
@@ -98,7 +100,7 @@ public class Player : MonoBehaviour
                 isCrouching = false;
                 OffCrouchHitbox.Invoke();
             }
-            else if (Input.GetKeyDown(KeyCode.Space) && isCrouching && isInSpace) // if n space, crouching and presses space
+            else if (Input.GetKeyDown(KeyCode.Space) && isCrouching && isInSpace) // if in space, crouching and presses space
             {
                 rigidbody2D.AddForce(Vector3.up * jumpForceCrouchSpace, ForceMode2D.Impulse);
                 isCrouching = false;
@@ -130,10 +132,16 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (isSpring) // if touching spring
+        if (isSpringSpace) // if touching spring
         {
             rigidbody2D.velocity = Vector2.zero;
-            rigidbody2D.AddForce(Vector3.up * springForce, ForceMode2D.Impulse);
+            rigidbody2D.AddForce(Vector3.up * springForceSpace, ForceMode2D.Impulse);
+        }
+
+        if (isSpring)
+        {
+            rigidbody2D.velocity = Vector2.zero;
+            rigidbody2D.AddForce(Vector3.up * springForceSpace, ForceMode2D.Impulse);
         }
     }
 
@@ -152,6 +160,12 @@ public class Player : MonoBehaviour
         }
 
         if (other.gameObject.CompareTag("Spring"))
+        {
+            isSpringSpace = true;
+            midairJump = 0;
+        }
+
+        if (other.gameObject.CompareTag("Spring normal"))
         {
             isSpring = true;
             midairJump = 0;
@@ -179,6 +193,12 @@ public class Player : MonoBehaviour
         }
 
         if (other.gameObject.CompareTag("Spring"))
+        {
+            isSpringSpace = false;
+            midairJump = 0;
+        }
+
+        if (other.gameObject.CompareTag("Spring normal"))
         {
             isSpring = false;
             midairJump = 0;

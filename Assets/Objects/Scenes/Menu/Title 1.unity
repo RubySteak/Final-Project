@@ -1992,7 +1992,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 841a5aab0671c1e4ca64074f7a792cc1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2705,14 +2705,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5917d0e34ce1a2b47b5fb6fd11052a70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnCrouchHitbox:
+    m_PersistentCalls:
+      m_Calls: []
+  OffCrouchHitbox:
+    m_PersistentCalls:
+      m_Calls: []
   jumpForce: 0
-  jumpForceCrouch: 15
   jumpForceWall: 0
+  jumpForceSpacePlatform: 2.5
+  jumpForceCrouch: 15
+  jumpForceCrouchSpace: 5
+  springForceSpace: 30
+  springForce: 20
   moveSpeed: 0
+  moveSpeedSpace: 2
   isFalling: 1
   isMoving: 0
   isTouchingWall: 0
   isCrouching: 0
+  isSpringSpace: 0
+  isSpring: 0
+  isOnSpacePlatform: 0
+  isInSpace: 0
 --- !u!95 &1878781196
 Animator:
   serializedVersion: 7
@@ -3000,14 +3015,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5917d0e34ce1a2b47b5fb6fd11052a70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnCrouchHitbox:
+    m_PersistentCalls:
+      m_Calls: []
+  OffCrouchHitbox:
+    m_PersistentCalls:
+      m_Calls: []
   jumpForce: 0
-  jumpForceCrouch: 15
   jumpForceWall: 0
+  jumpForceSpacePlatform: 2.5
+  jumpForceCrouch: 15
+  jumpForceCrouchSpace: 5
+  springForceSpace: 30
+  springForce: 20
   moveSpeed: 0
+  moveSpeedSpace: 2
   isFalling: 1
   isMoving: 0
   isTouchingWall: 0
   isCrouching: 0
+  isSpringSpace: 0
+  isSpring: 0
+  isOnSpacePlatform: 0
+  isInSpace: 0
 --- !u!95 &1889573372
 Animator:
   serializedVersion: 7
@@ -3506,14 +3536,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5917d0e34ce1a2b47b5fb6fd11052a70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnCrouchHitbox:
+    m_PersistentCalls:
+      m_Calls: []
+  OffCrouchHitbox:
+    m_PersistentCalls:
+      m_Calls: []
   jumpForce: 0
-  jumpForceCrouch: 15
   jumpForceWall: 0
+  jumpForceSpacePlatform: 2.5
+  jumpForceCrouch: 15
+  jumpForceCrouchSpace: 5
+  springForceSpace: 30
+  springForce: 20
   moveSpeed: 0
+  moveSpeedSpace: 2
   isFalling: 1
   isMoving: 0
   isTouchingWall: 0
   isCrouching: 0
+  isSpringSpace: 0
+  isSpring: 0
+  isOnSpacePlatform: 0
+  isInSpace: 0
 --- !u!114 &2141172976
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -164,7 +164,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      steam_happy_0: 2131982127808201584
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

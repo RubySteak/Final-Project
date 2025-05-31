@@ -26,6 +26,7 @@ public class Pause : MonoBehaviour
 
     void PauseCheck()
     {
+        
         if (Input.GetKeyDown(KeyCode.P) && isPause == false)
         {
             Time.timeScale = 0;
@@ -45,5 +46,10 @@ public class Pause : MonoBehaviour
     void Listener()
     {
         
+    }
+
+    void OnDisable()
+    {
+        Time.timeScale = 1;
     }
 }
